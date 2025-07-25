@@ -46,20 +46,7 @@
 
   <button onclick="calculateGPM()">Calculate GPM</button>
 <button onclick="resetCalculator()" style="background-color:#f44336; color:white;">Reset</button>
-function resetCalculator() {
-  document.getElementById("gallons").value = "";
-  document.getElementById("result").innerText = "";
-  document.getElementById("timerDisplay").innerText = "Time: 0.00 seconds";
-  document.getElementById("startStopBtn").innerText = "Start Timer";
 
-  if (timerInterval) {
-    clearInterval(timerInterval);
-  }
-
-  startTime = null;
-  elapsedTime = 0;
-  isRunning = false;
-}
 
   <div id="result"></div>
 
@@ -103,7 +90,20 @@ function resetCalculator() {
 
       const minutes = seconds / 60;
       const gpm = gallons / minutes;
+function resetCalculator() {
+  document.getElementById("gallons").value = "";
+  document.getElementById("result").innerText = "";
+  document.getElementById("timerDisplay").innerText = "Time: 0.00 seconds";
+  document.getElementById("startStopBtn").innerText = "Start Timer";
 
+  if (timerInterval) {
+    clearInterval(timerInterval);
+  }
+
+  startTime = null;
+  elapsedTime = 0;
+  isRunning = false;
+}
       document.getElementById("result").innerText = `Flowrate: ${gpm.toFixed(2)} GPM`;
     }
   </script>
