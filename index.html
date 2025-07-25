@@ -75,21 +75,26 @@
       }
     }
 
-    function calculateGPM() {
-      const gallons = parseFloat(document.getElementById("gallons").value);
-      const seconds = elapsedTime / 1000;
+   function calculateGPM() {
+  const gallons = parseFloat(document.getElementById("gallons").value);
+  const seconds = elapsedTime / 1000;
 
-      if (!gallons || gallons <= 0) {
-        document.getElementById("result").innerText = "Please enter a valid number of gallons.";
-        return;
-      }
-      if (seconds <= 0) {
-        document.getElementById("result").innerText = "Please start and stop the timer.";
-        return;
-      }
+  if (!gallons || gallons <= 0) {
+    document.getElementById("result").innerText = "Please enter a valid number of gallons.";
+    return;
+  }
+  if (seconds <= 0) {
+    document.getElementById("result").innerText = "Please start and stop the timer.";
+    return;
+  }
 
-      const minutes = seconds / 60;
-      const gpm = gallons / minutes;
+  const minutes = seconds / 60;
+  const gpm = gallons / minutes;
+
+  document.getElementById("result").innerText = `Flowrate: ${gpm.toFixed(2)} GPM`;
+}
+
+// ✅ Now defined globally
 function resetCalculator() {
   document.getElementById("gallons").value = "";
   document.getElementById("result").innerText = "";
