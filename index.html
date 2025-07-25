@@ -45,7 +45,6 @@
   <div class="timer" id="timerDisplay">Time: 0.00 seconds</div>
 
   <button onclick="calculateGPM()">Calculate GPM</button>
-  <button onclick="clearResult()">Clear Result</button> <!-- ✅ NEW BUTTON -->
 
   <div id="result"></div>
 
@@ -91,11 +90,6 @@
       const gpm = gallons / minutes;
 
       document.getElementById("result").innerText = `Flowrate: ${gpm.toFixed(2)} GPM`;
-    }
-
-    // ✅ Clear just the result display
-    function clearResult() {
-      document.getElementById("result").innerText = "";
     }
   </script>
 
